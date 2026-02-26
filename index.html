@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hole.io Clone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Main game canvas -->
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- Mini-map canvas -->
+  <canvas id="minimap" width="150" height="150"></canvas>
+
+  <!-- HUD (visible during play) -->
+  <div id="hud" class="hidden">
+    <div id="timer-bar"><div id="timer-fill" style="width:100%"></div></div>
+    <div id="hud-info">
+      <div id="score-display">Score: <span id="score-val">0</span></div>
+      <div id="timer-display">Time: <span id="timer-val">120</span>s</div>
+    </div>
+  </div>
+
+  <!-- Leaderboard (visible during play) -->
+  <ul id="leaderboard" class="hidden">
+    <h3>Leaderboard</h3>
+    <ul id="leaderboard-list"></ul>
+  </ul>
+
+  <!-- Controls hint -->
+  <div id="controls-hint" class="hidden">Move: WASD / Arrow Keys / Mouse</div>
+
+  <!-- ── Start overlay ── -->
+  <div id="start-overlay" class="overlay">
+    <div class="panel">
+      <h1>HOLE.IO</h1>
+      <p class="subtitle">Swallow everything. Grow. Dominate.</p>
+      <label for="player-name">Your name</label>
+      <input type="text" id="player-name" maxlength="16" placeholder="Player" value="Player" />
+      <br />
+      <button class="btn" id="start-btn">PLAY</button>
+    </div>
+  </div>
+
+  <!-- ── End overlay ── -->
+  <div id="end-overlay" class="overlay hidden">
+    <div class="panel" id="end-panel">
+      <div class="result-title" id="result-title">You Win!</div>
+      <p class="subtitle" id="result-subtitle">Final Standings</p>
+      <ul id="final-scores"></ul>
+      <button class="btn" id="play-again-btn">PLAY AGAIN</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
